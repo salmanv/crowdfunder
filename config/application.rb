@@ -63,3 +63,5 @@ module Crowdfunder
         g.test_framework :rspec, :fixture => false 
   end
 end
+end
+
