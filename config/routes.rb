@@ -1,7 +1,12 @@
 Crowdfunder::Application.routes.draw do
-  get "projects/index"
+  # get "welcome/index"
+
+  # get "projects/index"
 
   resources :projects 
+  resources :welcome
+
+  root :to => "welcome#index"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

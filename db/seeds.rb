@@ -1,3 +1,5 @@
+#cities = City.create([{name: 'chicago'}, {name: 'copenhagen'}])
+#Mayor.create(name: 'emanuel', city: cities.first)
 #destroy all pre-existing data before seeding 
 
 User.destroy_all
