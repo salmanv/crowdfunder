@@ -32,13 +32,14 @@ describe "Project Listing" do
       page.should have_content('Project 3')
       expect(page).to have_content('Project 3')
 
-      #click a link to the project1's show page
+      # Click a link to the project1's show page
       click_link('Project 1')
-      #expect we're on project 1's show page
-      # expect(current_path).to eq(projects_path(project1))
-      #Expect on this page the first h1 has the text project1's title
-      expect(page).to have_selector('h1:first', text: project1.title);
-    
+      # Expect we're on project1's show page
+      expect(current_path).to eq(project_path(project1))
+      # Expect on this page the first h1 has the text project1's title
+      page.should have_selector('h1:first', text: project1.title)
+      expect(page).to have_selector('h1:first', text: project1.title)
+    end
 
 
 
@@ -61,7 +62,6 @@ describe "Project Listing" do
       expect(page).to have_selector('.navbar ul li.active a', text: "Projects")
 
 
-    end
 
     end
   end
