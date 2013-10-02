@@ -20,4 +20,16 @@
       <%= f.password_field :password_confirmation %>
 
       <%= f.submit "Create Account", class: "btn btn-large btn-primary" %>
-    <% end %>
+    
+
+    <% unless f.object.errors.empty? %>
+  <div class="alert alert-error">
+    <strong>Try again after fixing the following things:</strong><br/>
+    <ul>
+      <% f.object.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+<% end %>
