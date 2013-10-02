@@ -34,6 +34,7 @@ describe "User Authentication" do
 			end
 		end
 
+
 		it "should fail registration" do 
 			visit "/users/new"
 			user = FactoryGirl.build(:user)
@@ -46,6 +47,10 @@ describe "User Authentication" do
 			#...no message saying "Account created" should appear
 
 			expect(page).to have_no_content("Account created")
+			# Should see "Try again" message on failure to register
+			within(:css, ".alert") do
+				have_content("Try again")
+			end
 		end
 	end
 end
