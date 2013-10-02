@@ -20,12 +20,12 @@ describe "User Authentication" do
 			fill_in "user[first_name]", :with => user.first_name
 			fill_in "user[last_name]", :with => user.last_name
 			fill_in "user[password]", :with => user.password
+			fill_in "user[password_confirmation]", :with => user.password_confirmation
 			click_button "Create Account"
 
 			#AFter submitting the form, should be redirected to root 
 			expect(current_path).to eq(root_path)
 			#While a message says "account created"
-			page.should have_content("Account created")
 			expect(page).to have_content("Account created")
 			#And the nav no longer has a link to sing up but logout
 			within(:css, '.navbar') do 

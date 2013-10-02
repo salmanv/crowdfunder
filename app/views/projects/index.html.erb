@@ -2,11 +2,11 @@
 
 <h2> Listing projects <h2>
 
-
+<ul>
 <% @projects.each do |x| %>
-<%=link_to x.title, project_path(x) %>
-<%= x.teaser %>
+<li><%=link_to x.title, project_path(x) %>
+<%= x.teaser %></li>
 <%end%>
-
+</ul>
 
 <p>Find me in app/views/projects/index.html.erb</p>

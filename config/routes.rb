@@ -1,10 +1,15 @@
 Crowdfunder::Application.routes.draw do
+  # get "users/new"
+
+  # get "users/create"
+
   # get "welcome/index"
 
   # get "projects/index"
 
   resources :projects 
   resources :welcome
+  resources :users, :except => :index 
 
   root :to => "welcome#index"
 
