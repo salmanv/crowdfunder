@@ -18,14 +18,13 @@ Crowdfunder::Application.routes.draw do
   resources :users, :except => :index 
   resources :sessions
   # , :only => [:new, :create, :destroy]
-  match 'login' => 'sessions#new', :as => :login
-  match 'logout' => 'sessions#destroy', :as => :logout
+  get 'login' => 'sessions#new', :as => :login
+  delete 'logout' => 'sessions#destroy', :as => :logout
 
   root :to => "welcome#index"
 
 
-  #
-
+ 
   
   
 
