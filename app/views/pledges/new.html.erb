@@ -1,2 +1,10 @@
-<h1>Pledges#new</h1>
-<p>Find me in app/views/pledges/new.html.erb</p>
+<% provide(:title, 'Pledge') %>
+<h1>What do you want to Pledge for this project?!</h1>
+<%= form_for([@project, @pledge]) do |f| %>
+
+      <%= f.label :amount %>
+      <%= f.number_field :amount %>
+
+   
+      <%= f.submit "Pledge", class: "btn btn-large btn-primary"%>
+    <% end %>
