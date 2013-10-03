@@ -6,25 +6,22 @@
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
+
 <body>
-
-
 	<%= render 'layouts/shared/nav' %>
-	
-	
-<div class="container">
+		
+	<div class="container">
+		<%= yield %>
+	</div>
+	<div class"messages">
+		<% if flash[:notice] %>
+		  <p class="welcome"><%= flash[:notice] %></p>
+		<% end %>
 
-	<%= yield %>
-</div>
-<div class"messages">
-<% if flash[:notice] %>
-  <p class="welcome"><%= flash[:notice] %></p>
-<% end %>
-
-<% if flash[:alert] %>
-  <p class="welcome"><%= flash[:alert] %></p>
-<% end %>
-</div>
+		<% if flash[:alert] %>
+		  <p class="alert alert-error"><%= flash[:alert] %></p>
+		<% end %>
+	</div>
 
 </body>
 </html>

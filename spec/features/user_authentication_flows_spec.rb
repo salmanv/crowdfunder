@@ -62,7 +62,7 @@ describe "User Authentication" do
 	    end
 
 	    it "should unsuccessfully log in" do
-	      visit '/session/new'
+	      visit '/sessions/new'
 
 	      fill_in "email", with: "a@b.com"
 	      fill_in "password", with: "invalid creds"
