@@ -1,4 +1,8 @@
 Crowdfunder::Application.routes.draw do
+  get "pledges/new"
+
+  get "pledges/create"
+
   # get "sessions/new"
 
   # get "sessions/create"
@@ -13,7 +17,9 @@ Crowdfunder::Application.routes.draw do
 
   # get "projects/index"
 
-  resources :projects 
+  resources :projects do
+    resources :pledges, only: [:new, :create]
+  end
   resources :welcome
   resources :users, :except => :index 
   resources :sessions
