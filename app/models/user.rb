@@ -9,7 +9,7 @@ class User < ActiveRecord::Base
   validates :email, :presence => true 
   validates_confirmation_of :password
   validates :password, :presence => true 
-  validates :password_confirmation, :presence => true 
+  # validates :password_confirmation, :presence => true 
 
 
 end

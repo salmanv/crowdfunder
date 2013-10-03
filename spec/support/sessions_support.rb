@@ -2,12 +2,14 @@ module SessionSupport
   # This is a helper method we can call anywhere in the tests
   def setup_signed_in_user
     pass = "this-is-a-password"
-    user = FactoryGirl.create :user, password: pass
-    visit '/session/new'
+    user = FactoryGirl.create :user, password: pass, password_confirmation: pass
+    # user = FactoryGirl.create :user, password: pass
+    visit '/sessions/new'
+    # visit '/session/new'
 
     fill_in "email", with: user.email
     fill_in "password", with: pass
-    fill_in "password_confirmation", with: pass
+    # fill_in "password_confirmation", with: pass
     click_button "Login"
     # Return our user when this method is called
     user

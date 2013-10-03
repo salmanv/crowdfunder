@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
   	if user
     	redirect_back_or_to root_url, :notice => "Logged in!"
   	else
-  	  flash.now.alert = "Email or password was invalid"
+  	  flash.now.alert = "Email or password was Invalid"
  	   render :new	
   	end
   end
@@ -34,6 +34,6 @@ class SessionsController < ApplicationController
 
   def destroy
   	logout
-  	redirect_to root_path, :notice => "Logged out!"
+  	redirect_to root_path, :notice => "Bye Logged out!"
   end
 end
