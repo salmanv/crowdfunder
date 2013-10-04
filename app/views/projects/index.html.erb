@@ -2,8 +2,13 @@
 
 <ul>
 <% @projects.each do |x| %>
-<li><%=link_to x.title, project_path(x) %>
+<li class = 'project'><%=link_to x.title, project_path(x) %>
 <%= x.teaser %></li>
 <%end%>
 </ul>
 
+
+
+<div class= "paginate">
+	<%= paginate @projects %>
+</div>
