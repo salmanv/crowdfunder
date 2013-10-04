@@ -5,6 +5,6 @@ protected
 #Sorcery automatically looks for a method called not_authenticated 
 
 	def not_authenticated
-		redirect_to new_session_path, :alert => "Please login first"
+		redirect_to new_session_path, :alert => "Please login first."
 	end 
 end
