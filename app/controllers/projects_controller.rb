@@ -8,6 +8,9 @@ class ProjectsController < ApplicationController
   	@user = @project.user
   end
 
+  def nav_state
+  	@nav = :projects
+  end
 end
 
 

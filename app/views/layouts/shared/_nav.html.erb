@@ -5,23 +5,28 @@
       <div class="nav-collapse collapse">
         <ul class="nav">
           <div class="pull-right">
-
             <% if logged_in? %>
               <%= link_to 'Logout', logout_path, :method => :delete, class: 'btn' %>
             <% else %>
               <%= link_to 'Sign Up', [:new, :user], class: 'btn btn-primary' %>
               <%= link_to  'Sign In', new_session_path, class: 'btn btn-success' %>
-            <% end %>
-
-          </div>
-          <li class="<%= 'active' if current_page? root_path %>">
-            <%= link_to 'Home', :root %>
-          </li>
-          <li class="<%= 'active' if controller_name == 'projects'%>">
-            <%= link_to 'Projects', :projects %>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</div>
+            <% end %> <!-- if logged_in? -->
+          </div> <!-- pull-right -->
+            <li class="<%= 'active' if @nav == :home %>">
+              <%= link_to 'Home', :root %>
+            </li>
+            <li class="<%= 'active' if @nav == :projects %>">
+              <%= link_to 'Projects', :projects %>
+            </li>
+            <% if logged_in? %>
+              <li class="divider-vertical"></li>
+              <li class="<%= 'active' if @nav == :my_projects %>">
+              <li class= 'active'>
+                <%= link_to 'My Projects', [:my, :projects] %>
+              </li>
+            <% end %> <!-- if logged_in? -->
+        </ul> <!-- .nav -->
+      </div> <!-- .nav-collapse .collapse -->
+    </div> <!-- .container -->
+  </div> <!-- .navbar-inner -->
+</div> <!-- .navbar .navbar-fixed-top -->

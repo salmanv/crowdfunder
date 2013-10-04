@@ -11,7 +11,7 @@ describe "Project Listing" do
 
       visit '/my/projects'
 
-      page.should have_selector('div.project', count: 3)
+      
       expect(page).to have_selector('div.project', count: 3)
 
       page.should have_no_content("Other Dude's Project")
@@ -60,7 +60,7 @@ describe "Project Listing" do
 
       expect(current_path).to eq(my_projects_path)
     end
-    
+
     it "should display navigation" do 
       user = setup_signed_in_user
 

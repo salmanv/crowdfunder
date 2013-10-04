@@ -2,8 +2,11 @@
 
 <%= link_to "New Project", new_my_project_path %>
 
-<%= @projects.each do |project| %>
+<% @projects.each do |project| %>
+
 <div class= "project">
 <%= project.title %>
 </div>
+
+
 <% end %>

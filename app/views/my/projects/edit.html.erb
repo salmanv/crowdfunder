@@ -4,27 +4,24 @@
 	<div class = "field">
 	  <%= f.label :title  %>
 	  <%= f.text_field :title%>
-	</div>
+	</div> <!-- .field -->
 
 	<div class = "field">
 	  <%= f.label :teaser  %>
 	  <%= f.text_field :teaser %>
-	</div>
+	</div> <!-- .field -->
 
 	<div class = "field">
 	  <%= f.label :description %>
 	  <%= f.text_field :description %>
-	</div>  
+	</div> <!-- .field -->
 
 	<div class = "field">
 	  <%= f.label :goal  %>
 	  <%= f.number_field :goal %>
-	</div>
+	</div> <!-- .field -->
 
-  <div class="actions"><%= f.submit "Update Project" %></div>
-<% end %>
-
-
-
-
-
+  <div class="actions">
+  	<%= f.submit "Update Project" %>
+  </div> <!-- .actions -->
+<% end %> <!-- form -->
