@@ -4,6 +4,8 @@ class User < ActiveRecord::Base
   has_many :projects
   has_many :pledges
 
+
+
   validates :first_name, :presence => true
   validates :last_name, :presence => true
   validates :email, :presence => true 
@@ -11,5 +13,9 @@ class User < ActiveRecord::Base
   validates :password, :presence => true 
   # validates :password_confirmation, :presence => true 
 
+
+  def name
+    "#{self.first_name} #{self.last_name}"
+  end
 
 end
