@@ -1,27 +1,24 @@
 <h1> Edit your Project </h1>
+
 <%= form_for [:my, @project] do |f| %>
 
-	<div class = "field">
-	  <%= f.label :title  %>
+	
+	  <%= f.label "project[title]"  %>
 	  <%= f.text_field :title%>
-	</div> <!-- .field -->
-
-	<div class = "field">
-	  <%= f.label :teaser  %>
+	
+	  <%= f.label "project[teaser]" %>
 	  <%= f.text_field :teaser %>
-	</div> <!-- .field -->
-
-	<div class = "field">
-	  <%= f.label :description %>
+	
+	  <%= f.label "project[description]" %>
 	  <%= f.text_field :description %>
-	</div> <!-- .field -->
-
-	<div class = "field">
-	  <%= f.label :goal  %>
+	
+	  <%= f.label "project[goal]" %>
 	  <%= f.number_field :goal %>
-	</div> <!-- .field -->
-
-  <div class="actions">
+	
+  <div class="actions-bigger-btn">
   	<%= f.submit "Update Project" %>
   </div> <!-- .actions -->
-<% end %> <!-- form -->
+
+	<% end %> <!-- form -->
+
+	<%=link_to "Manage Images", my_project_images_path(@project) %>

@@ -21,8 +21,11 @@ Crowdfunder::Application.routes.draw do
     resources :pledges, only: [:new, :create]
   end
   namespace :my do 
-    resources :projects #=> My::ProjectsController
+    resources :projects do #=> My::ProjectsController
+    resources :images
   end
+end
+
 
   resources :welcome
   resources :users, :except => :index 
